@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OB50 UPDATE - NARUTO SHIPPUDEN COLLABORATION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Teko:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E53935;
+            --primary-dark: #B71C1C;
+            --dark: #0A0A0A;
+            --dark-light: #141414;
+            --dark-lighter: #202020;
+            --text: #FFFFFF;
+            --text-light: #E0E0E0;
+            --text-lighter: #8B98A8;
+            --akatsuki-red: #E53935;
+            --akatsuki-black: #121212;
+            --cloud-pattern: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(229,57,53,0.1)" d="M30,20 Q40,10 50,20 T70,20 T90,30 T80,50 T90,70 T70,80 T50,70 T30,80 T10,70 T20,50 T10,30 Z"/></svg>');
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-color: var(--akatsuki-black);
+            background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.9), rgba(20, 20, 20, 0.7)), 
+                              var(--cloud-pattern);
+            background-attachment: fixed;
+            background-size: 300px;
+        }
+        
+        /* Main Title Styles - Updated */
+        .main-title {
+            text-align: center;
+            margin: 30px 0 30px;
+            padding: 40px 0;
+            border-bottom: 2px solid var(--akatsuki-red);
+            border-top: 2px solid var(--akatsuki-red);
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(50, 20, 20, 0.8) 100%);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+        
+        .patch-notes-label {
+            color: var(--text-light);
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .main-title h1 {
+            font-size: 52px;
+            color: var(--akatsuki-red);
+            font-weight: 700;
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 5px 0;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .main-title h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--akatsuki-red);
+        }
+        
+        .main-title p {
+            font-size: 18px;
+            color: var(--text-light);
+            font-weight: 500;
+            position: relative;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* Main Content Styles */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 30px;
+        }
+        
+        /* Update Sections */
+        .update-section {
+            background-color: rgba(30, 30, 30, 0.7);
+            border-radius: 8px;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--akatsuki-red);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .update-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .update-header h2 {
+            font-size: 28px;
+            color: var(--akatsuki-red);
+            margin-right: 15px;
+            font-weight: 700;
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .update-content {
+            line-height: 1.7;
+        }
+        
+        .update-content p {
+            margin-bottom: 18px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+        
+        .update-content h3 {
+            color: var(--akatsuki-red);
+            margin: 25px 0 15px;
+            font-size: 24px;
+            font-weight: 600;
+            font-family: 'Teko', sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .update-content h4 {
+            color: var(--text-light);
+            margin: 20px 0 10px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .update-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .update-content li {
+            margin-bottom: 10px;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .image-caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--text-lighter);
+            font-style: italic;
+        }
+        
+        /* Tables */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+        
+        .update-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: rgba(40, 40, 40, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .update-table th, .update-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .update-table th {
+            background-color: rgba(229, 57, 53, 0.2);
+            color: var(--akatsuki-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            text-align: left;
+        }
+        
+        .update-table td {
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .update-table tr:first-child th {
+            text-align: center;
+        }
+        
+        .update-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background-color: rgba(40, 40, 40, 0.7);
+            border-left: 4px solid var(--akatsuki-red);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+            backdrop-filter: blur(5px);
+        }
+        
+        .highlight-box p {
+            color: var(--text-light);
+            font-style: italic;
+            margin: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(30, 30, 30, 0.7);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--dark-lighter);
+            border-radius: 50%;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-link i {
+            font-size: 24px;
+        }
+        
+        .social-link.instagram i {
+            color: #E1306C;
+        }
+        
+        .social-link.telegram i {
+            color: #0088CC;
+        }
+        
+        .social-link.youtube i {
+            color: #FF0000;
+        }
+        
+        .social-username {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 18px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            color: var(--text-lighter);
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        /* Audio Player - Hidden */
+        #bg-music {
+            position: fixed;
+            bottom: -100px;
+            right: -100px;
+            z-index: -1;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-container {
+                padding: 0 20px;
+            }
+            
+            .update-section {
+                padding: 25px;
+            }
+            
+            .update-table {
+                font-size: 13px;
+            }
+            
+            .update-table th, .update-table td {
+                padding: 8px 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title h1 {
+                font-size: 42px;
+            }
+            
+            .patch-notes-label {
+                font-size: 16px;
+            }
+            
+            .main-title p {
+                font-size: 16px;
+            }
+            
+            .update-header h2 {
+                font-size: 24px;
+            }
+            
+            .update-content h3 {
+                font-size: 22px;
+            }
+            
+            .update-content h4 {
+                font-size: 18px;
+            }
+            
+            .social-row {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .main-title h1 {
+                font-size: 36px;
+            }
+            
+            .patch-notes-label {
+                font-size: 14px;
+            }
+            
+            .main-title p {
+                font-size: 14px;
+            }
+            
+            .update-section {
+                padding: 20px;
+            }
+            
+            .update-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .update-header h2 {
+                margin-right: 0;
+            }
+            
+            .social-row {
+                gap: 15px;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .social-link i {
+                font-size: 20px;
+            }
+            
+            .social-username {
+                font-size: 16px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="main-title">
+        <div class="patch-notes-label">OB50 PATCH NOTES</div>
+        <h1>NARUTO SHIPPUDEN COLLABORATION</h1>
+        <p>GAME UPDATE: JULY 30, 2025</p>
+    </div>
+    
+    <div class="update-section" id="battle-royale">
+        <div class="update-header">
+            <h2>BATTLE ROYALE</h2>
+        </div>
+        <div class="update-content">
+            <div class="image-container">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcQs6Xg7md5x84ZdEAuN_M_Lc1pIsScMrkGvdd6HgTc-Kks9lLEDeLK5NeENDP5OPmq6WWK5VwfIM5sspIWaKRbHLmFaHWO9FI1CZHiFiMwuml98m-teSufmLsgrxJm291aV4aH?key=8Rh-TRPoVL-fFuJpJYAFPw" alt="Battle Royale Updates">
+            </div>
+            
+            <h3>TSUKUYOMI</h3>
+            <p>A new loot zone filled with opportunities!</p>
+            
+            <div class="highlight-box">
+                <p>"Tsukuyomi has arrived in Bermuda. In each match, a Tsukuyomi area will appear, offering a variety of ninjutsu skills and ninja equipment for players to explore."</p>
+            </div>
+            
+            <ul>
+                <li>Areas affected by Tsukuyomi display unique visual effects</li>
+                <li>This area provides more availability of ninjutsu skills and ninja equipment</li>
+                <li>When Tsukuyomi ends, a Tsukuyomi Special Airdrop will appear in the center of the area, containing lots of loot</li>
+                <li>Tsukuyomi area will appear on all maps</li>
+            </ul>
+            
+            <h3>AKATSUKI'S LEGACY</h3>
+            <p>Master all stages to gain Akatsuki's special abilities</p>
+            
+            <div class="highlight-box">
+                <p>"At the end of Tsukuyomi, Akatsuki Relics will appear on the map. Master them to gain special abilities—but be careful, your location will be visible on everyone's minimap!"</p>
+            </div>
+            
+            <ul>
+                <li>Akatsuki relics will appear after Tsukuyomi ends. Master all three stages to gain special abilities</li>
+                <li>The location of players with special abilities will be revealed on the mini map</li>
+                <li>Akatsuki relics will appear on all maps</li>
+                <li>Akatsuki Legacy Abilities (full release details on the ingame event page):
+                    <ul>
+                        <li><strong>Bansho Ten'in:</strong> Increases Shield Points and creates a spherical force field around the user, pulling enemies toward them. While active, this skill also scans enemy locations and deals gradual damage to Gloo Walls within range</li>
+                        <li><strong>Shikigami no Mai:</strong> Collects and scatters pieces of paper to create paper bombs at random locations near enemies within range. The bombs will ignite and explode randomly</li>
+                        <li><strong>Explosive Clay:</strong> Creates and controls a large bird. While flying, the bird can be detonated, dealing damage and a buzzing effect to enemies within range if not destroyed first</li>
+                        <li><strong>Amaterasu:</strong> Creates a wall of black flames in the target area. This flame instantly destroys Gloo Walls and damages enemies within them</li>
+                        <li><strong>Suiton: Suiryudan No Jutsu (Passive):</strong> When not on cooldown, attacking an enemy will summon a shark that bites to deal additional damage</li>
+                        <li><strong>Jujutsu: Shiji Hyoketsu:</strong> Draws a special circle on the ground. While inside the circle, the user can reflect damage received back at the attacker</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>AKATSUKI VS KONOHA</h3>
+            <p>Choose your side in battle!</p>
+            
+            <div class="highlight-box">
+                <p>"Players can find Akatsuki and Konoha symbols on the ground. Interact with them to join their side."</p>
+            </div>
+            
+            <ul>
+                <li>Interact with the Akatsuki or Konoha symbols scattered throughout the map to join the appropriate side</li>
+                <li>A special elimination effect will appear when a player eliminates an enemy from the opposing side</li>
+                <li>Akatsuki and Konoha symbols will appear on all maps</li>
+            </ul>
+            
+            <h3>THE DESTROYED KONOHA</h3>
+            <p>Revisit the iconic village</p>
+            
+            <div class="highlight-box">
+                <p>"The village of Konoha was destroyed after the Akatsuki attack. The destruction brought with it a wealth of ninjutsu skills and ninja equipment for players to discover and use."</p>
+            </div>
+            
+            <ul>
+                <li>Konoha Village has been destroyed by Akatsuki's attack</li>
+                <li>Players can find more ninjutsu skills and items in the village</li>
+                <li>Beware of falling rocks resulting from the Destruction</li>
+                <li>Konoha Village only appears in Bermuda</li>
+            </ul>
+            
+            <h3>OTHER ADJUSTMENTS</h3>
+            <ul>
+                <li>Revival Point Edo Tensei is back</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="clash-squad">
+        <div class="update-header">
+            <h2>CLASH SQUAD</h2>
+        </div>
+        <div class="update-content">
+            <div class="image-container">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdfKvHALDdFQlCKgjRM0Pyw2ZNb4Yd-0cMjv6kWk94KUMQdcWb-dlalCKZ0FDhhHinnGWkMi_tR65ScPRIUFXVG7G8Z3SaZ6v6WYOgcbaC3UD14JqQB2mbQp5-FlZNuNgcTUVTK?key=8Rh-TRPoVL-fFuJpJYAFPw" alt="Clash Squad Updates">
+            </div>
+            
+            <h3>NEW NINJUTSU, NEW STRATEGY</h3>
+            
+            <div class="highlight-box">
+                <p>"Experiment with various combinations of ninjutsu skills and ninja equipment on your epic ninja journey!"</p>
+            </div>
+            
+            <ul>
+                <li>Akatsuki relics, ninjutsu skills, and ninja equipment are also available in the CS Store and Cyber Airdrop</li>
+                <li>Chakra Tree Airdrop will appear in Rounds 3, 4, and 5</li>
+                <li>Cyber Points are now Red Moon Points. Collect 2 points to activate Red Moon in the next round</li>
+                <li>When the Red Moon is activated, players will receive a powerful buff</li>
+                <li>Red Tree can be activated on all CS maps</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="ninjutsu">
+        <div class="update-header">
+            <h2>NINJUTSU SKILLS & ITEMS</h2>
+        </div>
+        <div class="update-content">
+            <div class="image-container">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcA4c1DHJyyg5F3L9BAWHcsklGazJM3Cs-WdDFpundUHwUwx93KnKL9q_noGDZeFNGqV5EL4svpEJ30hqVEzcuSj4Kw9lLiALRE1ctZJXNODM4oN4AhSW-ROTsV8jn__rH6HupzVg?key=8Rh-TRPoVL-fFuJpJYAFPw" alt="Ninjutsu Skills">
+            </div>
+            
+            <h3>MASTER THE ART OF A NINJA</h3>
+            
+            <div class="highlight-box">
+                <p>"In addition to the Akatsuki Legacy, various ninjutsu skills and ninja equipment await players to discover and master!"</p>
+            </div>
+            
+            <p>Full release details are available on the in-game event page:</p>
+            <ul>
+                <li><strong>Sharingan:</strong> Copy active skills from nearby enemies</li>
+                <li><strong>Kuchiyose no Jutsu: Katsuyu:</strong> Summons Katsuyu at a location that can heal and help up teammates within range</li>
+                <li><strong>Revive Izanagi:</strong> When fallen, the user can use it to quickly get up and recover some HP</li>
+                <li><strong>Suna no Tate:</strong> Activates the Sand Shield which provides additional Shield Points and faster Shield Point recovery</li>
+                <li><strong>Minato's Kunai:</strong> Throw to mark a location. Tap again to use the Flying Raijin Jutsu and teleport to the marked point</li>
+                <li><strong>Clay Bird:</strong> Summons an explosive clay bird. The user can control its flight direction and determine when it explodes</li>
+                <li><strong>Paper Jutsu:</strong> When activated, the user releases paper bombs that seek out nearby enemies and explode</li>
+                <li><strong>Kage Bunshin no Jutsu:</strong> Extends the user's shadow forward to trap the enemy. Enemies hit will be significantly slowed</li>
+                <li><strong>Triple Shuriken:</strong> A close-range ninja weapon. Each throw releases three fan-shaped shuriken with moderate projectile speed</li>
+                <li><strong>Jiraiya's Telescope:</strong> The scope Jiraiya uses to find inspiration for writing</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="battle-royale-adjustments">
+        <div class="update-header">
+            <h2>BATTLE ROYALE ADJUSTMENTS</h2>
+        </div>
+        <div class="update-content">
+            <h3>GLOO MAKER ADJUSTMENTS</h3>
+            <p>Maximum limit reduced and generation faster</p>
+            
+            <div class="highlight-box">
+                <p>"To reduce the late-match chaos caused by too many Gloo Walls, we've lowered the maximum number you can carry and slowed down the Gloo Maker level-up. To maintain engaging gameplay, players now earn Gloo Walls faster and start with more, allowing for more strategy flexibility and more balanced gameplay."</p>
+            </div>
+            
+            <div class="table-container">
+                <table class="update-table">
+                    <thead>
+                        <tr>
+                            <th>LEVEL</th>
+                            <th>MAX GLOO WALL</th>
+                            <th>GENERATION TIME</th>
+                            <th>EXP TO LEVEL UP</th>
+                            <th>GLOO WALL AT BEGINNING/REVIVAL</th>
+                            <th>GLOO WALL PER ELIMINATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>4</td>
+                            <td>100s → 70s</td>
+                            <td>0</td>
+                            <td>1 → 2</td>
+                            <td>1 → 2</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>90s → 60s</td>
+                            <td>300 → 500</td>
+                            <td>1 → 2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>6</td>
+                            <td>80s → 50s</td>
+                            <td>700 → 1000</td>
+                            <td>1 → 2</td>
+                            <td>3 → 2</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>8</td>
+                            <td>60s → 40s</td>
+                            <td>1100 → 1500</td>
+                            <td>1 → 3</td>
+                            <td>4 → 2</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>10 → 8</td>
+                            <td>50s → 30s</td>
+                            <td>1500 → 2500</td>
+                            <td>1 → 3</td>
+                            <td>4 → 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>PARACHUTE OPTIMIZATION</h3>
+            <p>Landed exactly at the desired location</p>
+            
+            <div class="highlight-box">
+                <p>"When aiming for a closer landing spot, using the 'Dive Parachute' function is crucial. Previously, angle restrictions made landings less accurate. Now, players can parachute more vertically, making landings easier and more precise."</p>
+            </div>
+            
+            <ul>
+                <li>The steeper parachute dive angle provides better control</li>
+                <li>The camera angle during parachute can now be adjusted more freely for a clearer view down below</li>
+            </ul>
+            
+            <h3>OTHER ADJUSTMENTS</h3>
+            <ul>
+                <li>Cyber Mushrooms can now be activated by being hit by a vehicle</li>
+                <li>Portal Go can now be used while crouching or prone</li>
+                <li>Vending Machine Adjustment:
+                    <ul>
+                        <li>Hit List price reduced from 400 FF Coins to 200 FF Coins</li>
+                        <li>Available weapon customizations:
+                            <ul>
+                                <li>MAG-7: 100 FF Coins</li>
+                                <li>MP40: 200 FF Coins</li>
+                                <li>AC80: 200 FF Coins</li>
+                            </ul>
+                        </li>
+                        <li>Available Active Skill Card adjustments:
+                            <ul>
+                                <li>Unlimited Skill Card Oscar: 1200 FF Coins, purchase limit 1 per player</li>
+                                <li>Unlimited Skill Card Dimitri: 1200 FF Coins, purchase limit 3 per match</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Hit List adjustments:
+                    <ul>
+                        <li>Minimum enemy scan distance reduced: 100m → 20m</li>
+                        <li>Elimination reward adjustment:
+                            <ul>
+                                <li>Randomly awards one weapon from: M4A1-III, MP5-III, M1014-III</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Vest Enlarger and Vest Hardener removed</li>
+                <li>Chance of receiving a Lv.3 Helmet, Lv.3 Vest, or Lv.3 Backpack increased from 33% to 50%</li>
+                <li>Chance of receiving RGS-50 increased from 50% to 100%</li>
+                <li>Tech Workshops removed</li>
+                <li>Adjustment of loot amount in location:
+                    <ul>
+                        <li>Loot is reduced in popular areas namely Clock Tower, Observatory, and Peak</li>
+                        <li>Loot is increased in the Equator, Mars Electric, Pochinok, and areas around the Peak</li>
+                    </ul>
+                </li>
+                <li>Reduced Gloo Melter pickup limit from 3 to 2</li>
+                <li>Reduces Gloo Meter drop rate by 50%</li>
+                <li>Dragon Freeze added, with a take limit of 1</li>
+                <li>Mini Turret Adjustment:
+                    <ul>
+                        <li>Range increased from 30m to 60m</li>
+                        <li>Damage per shot increased from 20 to 50</li>
+                        <li>Fire rate reduced from 2 shots per second to 1 shot per second</li>
+                    </ul>
+                </li>
+                <li>Super Med withdrawal limit reduced from unlimited to 4</li>
+                <li>Adjusted time-limited auto-revival in Solo mode:
+                    <ul>
+                        <li>Solara: 145s → 420s</li>
+                        <li>Maps other than Solara: 145s → 390s</li>
+                    </ul>
+                </li>
+                <li>Revival Point Adjustment:
+                    <ul>
+                        <li>Cooldown reduced from 300s to 180s</li>
+                        <li>Closing time changed from the end of the third zone reduction to the end of the second zone reduction</li>
+                    </ul>
+                </li>
+                <li>Multi-player Revival Point speed increased:
+                    <ul>
+                        <li>1 player: 25s</li>
+                        <li>2 players: 20s → 12s</li>
+                        <li>3 players: 16s → 8s</li>
+                    </ul>
+                </li>
+                <li>Adjusted the speed of getting Defense Airdrop:
+                    <ul>
+                        <li>1 player: 100s</li>
+                        <li>2 players: 75s → 60s</li>
+                        <li>3 players: 60s → 44s</li>
+                        <li>4 players: 50s → 33s</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="characters">
+        <div class="update-header">
+            <h2>CHARACTERS</h2>
+        </div>
+        <div class="update-content">
+            <div class="image-container">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc0as-f4xSYYTT3TGSAWpIumOc3-OIAXcDahfjSTS6PhVyi3rkmNtaBrN9nQIFfBtf4BM47bnOhZJ0j8a1fBtO1FR4ffO2pgE1F5WLMsAouEeG8gNkE60Imim60iUP2s4g4qrZ6WQ?key=8Rh-TRPoVL-fFuJpJYAFPw" alt="Character Updates">
+            </div>
+            
+            <h3>NEW CHARACTERS</h3>
+            <h4>Rin</h4>
+            <p>Violet Strike</p>
+            
+            <div class="highlight-box">
+                <p>"Hayato's younger sister, a skilled and poised ninja. As the second child of the Yagami family, she operates from the shadows to keep her family's flame alive."</p>
+            </div>
+            
+            <p><strong>Gale of Kunai:</strong> Summons one kunai near the player every 8 seconds, up to a maximum of 3. The kunai can deal significant damage to Gloo Walls and will automatically lock onto the enemy or Gloo Wall the user is attacking, dealing up to 12 damage. The further the distance, the higher the damage.</p>
+            
+            <h3>CHARACTER BALANCE (ADJUSTMENTS)</h3>
+            <h4>Nairi</h4>
+            <p>Nairi can make your Gloo Wall stronger and heal herself and her teammates, giving her a significant advantage in both long-range and close-range combat. Therefore, we've decided to slightly reduce her survivability for better balance.</p>
+            
+            <p><strong>Ice Iron:</strong> Within 2s → 1.5s after using Gloo Wall, restores 160 durability/s for Gloo Wall and 10 HP/s → 5 HP/s for teammates within 5m. The healing effect cannot be stacked with multiple Gloo Walls.</p>
+            
+            <h4>Kairos</h4>
+            <p>Kairos boosts attacks with a powerful burst of penetration damage, giving them an edge in gunfights. Currently, the burst lasts a full 20 seconds—long enough to turn the tide in teamfights. This time, we've shortened that duration by increasing the EP consumption to balance gameplay.</p>
+            
+            <p><strong>Defense Breaker:</strong> Defense Mode: Recovers 2 EP/s continuously. Breaker Mode: Activates when EP is full and the skill is used for the first time when attacking an enemy with a shield/armor. During this mode, the user consumes 10 EP/s → 20 EP/s. Each hit on a shielded/armored enemy will reduce the armor's Shield Points/Durability by 120% of the damage dealt. When EP reaches 0, return to Defense Mode.</p>
+            
+            <h4>Sonia</h4>
+            <p>Sonia's Nanoshield allows you to perform crucial eliminations and, when paired with Dimitri, enables automatic help-ups after being knocked down. However, this can be frustrating for opponents. To make her counter-eliminations and self-revives feel more balanced, we're reducing the strength of her shield.</p>
+            
+            <p><strong>Nano Lifeshield:</strong> After receiving fatal damage, enters an invulnerable state and cannot move for 0.4s. Then, gains a shield of 50 HP → 1 HP that lasts for 2s. The user is eliminated when the shield disappears. Cooldown: 180s.</p>
+            
+            <h4>Santino</h4>
+            <p>In Battle Royale mode, some players were using Santino to grab weapons from the ground after landing on top of buildings, then quickly return to the rooftop. This tactic allowed them to ambush from unexpected angles, disrupting other players' experience. To address this, we've restricted this ability.</p>
+            
+            <p><strong>Shape Splitter:</strong> Spawn a mannequin with 200 HP that moves automatically for 25 seconds. When the mannequin is within 90m, use the skill again to swap positions with it. You can only swap once every 3 seconds, and a maximum of two times. The player who destroys the mannequin will be marked for 5 seconds. Cooldown: 60s. New mechanism: Cannot teleport if the mannequin is 10m higher than the user.</p>
+            
+            <h4>Laura</h4>
+            <p>Laura's power was meant to help long-range shooters become more accurate, but after several patches and new characters, her skills started to lag. In the next patch, we're increasing her accuracy boost to make Laura even more effective at long-range shooting.</p>
+            
+            <p><strong>Sharp Shooter:</strong> Accuracy increased from 50% → 60% when using scope.</p>
+            
+            <h4>Alvaro</h4>
+            <p>Alvaro's cluster grenades weren't deadly enough, so we increased his damage to make him a stronger bomber.</p>
+            
+            <p><strong>Splitz Blitz:</strong> Damage from explosive weapons increased by 20% and range increased by 10%. Each grenade will split into 3 mini grenades upon explosion, each dealing 20% → 25% of the original grenade's damage.</p>
+            
+            <h3>OTHER CHARACTER ADJUSTMENTS</h3>
+            <ul>
+                <li><strong>Skill Indicator Optimization:</strong>
+                    <ul>
+                        <li>Ryden, Ignis, and Oscar: When releasing skills on sloped terrain, the skill indicator now adjusts to the slope, ensuring more accurate distance control</li>
+                        <li>A124: Holding the skill button will display the throw trajectory and explosion area, helping players choose the optimal release location</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="weapons">
+        <div class="update-header">
+            <h2>WEAPONS AND BALANCE</h2>
+        </div>
+        <div class="update-content">
+            <div class="image-container">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdhh35d20gkY19JbD8l8AXV7Hgn6u9-UqtzkjB1jtSs4xKDt7gYe44v7MC6vPEb93BrI_GW09E2tK7QLYyRUIAzjHuwzrMTlk2tPUoRD8rUx0wOrGro8K0ocCExrqj2RNuBxsWFvQ?key=8Rh-TRPoVL-fFuJpJYAFPw" alt="Weapon Updates">
+            </div>
+            
+            <h3>WEAPON CUSTOMIZATION</h3>
+            <h4>Machine Guns: M60 & M249</h4>
+            
+            <div class="highlight-box">
+                <p>"New versions of the M60 and M249 now support attachments, increasing upgrade potential and overall power!"</p>
+            </div>
+            
+            <ul>
+                <li>M60: Added slots for muzzle and stock</li>
+                <li>M249: Added slots for muzzle and stock</li>
+            </ul>
+            
+            <h4>Marksman Rifle: AC80</h4>
+            
+            <div class="highlight-box">
+                <p>"The AC80 has been neglected for quite some time. In the new patch, the AC80 will be fully upgraded, making it more competitive among marksman weapons."</p>
+            </div>
+            
+            <p>AC80 (Buff): Rate of Fire +5%, Damage +20%, Consecutive hit damage bonus -20%</p>
+            
+            <h4>Assault Rifle: AN94</h4>
+            
+            <div class="highlight-box">
+                <p>"The AN94 has good damage and a good rate of fire, but its excessive spread limits its performance. As a rarely used weapon, its accuracy needs to be improved to make it more useful."</p>
+            </div>
+            
+            <p>AN94 (Buff): Accuracy +10%</p>
+            
+            <h4>Pistols: M1917 & FGL-24</h4>
+            
+            <div class="highlight-box">
+                <p>"The M1917 performed extremely well in Clash Squad, rivaling many rifles and SMGs. This new patch will slightly nerf the M1917 while still making it a cost-effective option."</p>
+            </div>
+            
+            <p>M1917 (Nerf): Damage -10%</p>
+            
+            <div class="highlight-box">
+                <p>"As one of the few weapons that can penetrate Gloo Walls and effectively damage enemy armor, the FGL-24 poses a significant threat in combat. We aim to nerf its armor-piercing capabilities while retaining its Gloo Wall penetration capabilities to reduce its overall impact."</p>
+            </div>
+            
+            <p>FGL24 (Nerf): Damage to Armor - 50%</p>
+            
+            <h4>Shotgun: M590</h4>
+            
+            <div class="highlight-box">
+                <p>"With its lightning-fast reload speed, the M590 combines high damage with stable sustained fire. This new patch will slightly slow its reload speed but increase its minimum damage to emphasize its initial strength."</p>
+            </div>
+            
+            <p>M590 (Adjustment): Minimum Damage +15%, Reload Speed -20%</p>
+            
+            <h4>SMG: Bizon</h4>
+            
+            <div class="highlight-box">
+                <p>"As the only SMG with powerful aim assist, the Bizon's large fire spread limits its effectiveness. This new patch will improve the Bizon's accuracy, making its combination of precision and aim assist even more competitive."</p>
+            </div>
+            
+            <p>Bizon (Buff): Accuracy +10%</p>
+            
+            <h4>Snipers: VSK94 & M82B</h4>
+            
+            <div class="highlight-box">
+                <p>"While both can be found on the battlefield, the VSK94 and M82B have very different strengths. The M82B excels in high damage and Gloo Wall penetration, while the VSK94 is often overlooked. Since both have similar drop conditions, the power difference needs to be reduced. This new patch will nerf the M82B and adjust the VSK94."</p>
+            </div>
+            
+            <p>VSK94 (Adjustment): Removes Aim-Assist, Range +10%</p>
+            <p>M82B (Nerf): Damage through Gloo Wall -15%</p>
+            
+            <h3>OTHER IN-GAME ADJUSTMENTS</h3>
+            <ul>
+                <li>CS Store Adjustments:
+                    <ul>
+                        <li>Increased the price of M1873 from 400 to 500 CS Cash</li>
+                        <li>Reduced the price of AN94, G36, and Kingfisher from 1100 to 1000 CS Cash</li>
+                        <li>Increased VSS price from 1400 to 1500 CS Cash</li>
+                    </ul>
+                </li>
+                <li>CS Cyber Airdrop location adjustment:
+                    <ul>
+                        <li>Bermuda: Pochinok, Rim Nam Village</li>
+                        <li>Solara: Bloomtown</li>
+                    </ul>
+                </li>
+                <li>Added Supply Device to CS Solara map</li>
+                <li>Training Grounds Optimization:
+                    <ul>
+                        <li>Added new setting panel in Target Range to set skill cooldown and shooting sensitivity</li>
+                        <li>Added Gloo Maker in Combat Zone: players start with 2 Gloo Walls and gain 1 every 10 seconds (void after a kill streak). Default maximum: 2</li>
+                        <li>Removed some fences on the Training Grounds building</li>
+                    </ul>
+                </li>
+                <li>Improved pin system: players can mark the location of enemies visible on their screen after elimination and before entering spectator mode</li>
+                <li>Speeds up the time to get up from a prone position</li>
+                <li>Increased Thermal Scope transparency to make enemy detection easier</li>
+                <li>The UI of the in-match info panel and player info (HP, equipment, etc.) has been improved for better viewing</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="system">
+        <div class="update-header">
+            <h2>SYSTEM</h2>
+        </div>
+        <div class="update-content">
+            <h3>CS Peak (22 AUG 2025)</h3>
+            <p>Join the new ranked mode and prove your skills!</p>
+            
+            <div class="highlight-box">
+                <p>"The latest CS-Ranked mode, CS Peak, will launch mid-season. Players who reach a certain rank will unlock access to this advanced mode, which is solo-only (not squad-based) and available every night at specific times. This is the place to showcase your skills and tactics—so bring your best game!"</p>
+            </div>
+            
+            <ul>
+                <li><strong>Earn honor through skill</strong>
+                    <ul>
+                        <li>CS Peak can only be played solo to ensure fair competition</li>
+                        <li>Player identities are hidden during the match, including avatars and banners</li>
+                        <li>Points are awarded based on performance in matches; the better your performance, the more points you earn</li>
+                    </ul>
+                </li>
+                <li><strong>Take advantage of special mechanisms in the game</strong>
+                    <ul>
+                        <li>The CS Store is designed to follow the CS Esports tournament setup, with lower Gloo Wall prices, a wider selection of weapons, and active skill cards</li>
+                        <li>A special MVP display will appear at the start of each round starting from the 2nd round</li>
+                    </ul>
+                </li>
+                <li><strong>Show off your glory outside the game</strong>
+                    <ul>
+                        <li>Players with high scores in CS Peak can unlock exclusive animation frames and emotes</li>
+                        <li>The CS Peak Leaderboard displays the best players based on Points</li>
+                        <li>CS Peak Points can be displayed on the profile page, friends list, and team panel in the lobby</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>HUD INTERFACE</h3>
+            <p>Improved HUD usability</p>
+            
+            <div class="highlight-box">
+                <p>"To support HUD customization and fast switching between HUD layouts, we have optimized the HUD interface and expanded the options for customizable buttons and ready-to-use layouts."</p>
+            </div>
+            
+            <ul>
+                <li>The HUD entrance has been moved; the changeable HUD design can now be accessed via Settings > In-Match</li>
+                <li>Shareable HUD codes will now never expire</li>
+                <li>More HUD buttons can now be hidden, including quick responses, emotes, pet emotes, and the prone/prone button</li>
+                <li>Some HUD buttons, such as those for entering vehicles and throwing grenades, can now be repositioned</li>
+            </ul>
+            
+            <h3>SHARING MATCH RESULTS</h3>
+            <p>Share your epic moments with friends!</p>
+            
+            <div class="highlight-box">
+                <p>"After a great performance in BR and CS modes, players can unlock a special sharing page that displays battle statistics such as eliminations, damage, and team contribution. Get ready to show off your strength to your friends!"</p>
+            </div>
+            
+            <ul>
+                <li>Players with outstanding performances can choose a special page when sharing their match results</li>
+                <li>This special sharing page displays battle statistics—eliminations, damage, assists, and heals—along with a summary of the best moments, all displayed in a more striking design</li>
+            </ul>
+            
+            <h3>COLLAB SYSTEM</h3>
+            <p>All our game collaborations in one view!</p>
+            
+            <div class="highlight-box">
+                <p>"If you want to easily explore all your collaborative content, now is the perfect time to check out the new Collab system and view your collection without any hassle."</p>
+            </div>
+            
+            <ul>
+                <li>Collaborative content—such as featured bundles, weapons, and collections—can be viewed within the Collab system</li>
+                <li>Unlocked collaboration items will be highlighted, and special effects will be activated when you collect all items in one category</li>
+                <li>This system launches with items from Chapters 1 and 2 of the NARUTO SHIPPUDEN event. More collaboration content from the past and future will be added soon</li>
+            </ul>
+            
+            <h3>OTHER ADJUSTMENTS OUTSIDE THE GAME</h3>
+            <ul>
+                <li>Added album feature in profile: photos and screenshots taken in game will now be automatically saved to album for easy review and editing</li>
+                <li>Added Fast Equip button to quickly decorate profile</li>
+                <li>Implemented Guild Hacker Penalty Notifications: When a player is detected hacking during Guild Wars or daily matches, all guild members will be notified via mail and the guild homepage. Penalties include a ban and activity point deductions</li>
+                <li>QR scanning page optimization: players can now click a button to access QR codes stored in their device's album</li>
+                <li>Added new achievements for Craftland and other modes!</li>
+                <li>Evo Access can now be unlocked using diamonds</li>
+                <li>Look Changers can now be used in the Lobby</li>
+                <li>Improved user experience in the Gift Store</li>
+                <li>Players can now immediately use the main prize after winning it in the royale event</li>
+                <li>Newly acquired items now appear before already worn items in the Vault for easier access</li>
+                <li>A "Bundle" tab was added to the Vault to display all owned clothing bundles for easy viewing and use</li>
+                <li>Default level 3 bag model updated; check in the Vault or while playing</li>
+                <li>Added keyword hints next to skills and equipment to help new players understand their main functions</li>
+                <li>Added support for 3D Lobby and Max graphics options (not just in Free Fire Max)</li>
+                <li>Gameplay details now appear when players click on a custom room</li>
+                <li>Added options to set match economy in CS Custom Rooms mode, and advanced settings content was improved</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="update-section" id="craftland">
+        <div class="update-header">
+            <h2>CRAFTLAND</h2>
+        </div>
+        <div class="update-content">
+            <h3>CRAFTLAND MEMBERSHIP NOW AVAILABLE!</h3>
+            <p>Players can now purchase a Craftland Membership to unlock exclusive content. Members can also create member-specific content and earn rewards. Currently, it's only available in select regions.</p>
+            
+            <h3>AI GENERATION</h3>
+            <ul>
+                <li>Added a new AI 3D object generation feature, which allows for rapid object creation based on descriptions. Currently, only English descriptions are supported</li>
+                <li>Added AI-based racing map feature, allowing you to create tracks simply by drawing curved paths</li>
+            </ul>
+            
+            <h3>ASSET STORE OPTIMIZATION</h3>
+            <ul>
+                <li>An internal block reference issue in assets has been fixed to prevent errors due to missing references</li>
+                <li>You can now like resources shared by other creators</li>
+                <li>Creators who get a lot of likes can get special achievements!</li>
+            </ul>
+            
+            <h3>OTHER</h3>
+            <ul>
+                <li>The block editor now supports creating, using, and managing custom events</li>
+                <li>Added auto-save feature with adjustable time interval</li>
+            </ul>
+            
+            <p>More exciting features are coming soon—stay tuned!</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <div class="social-links">
+            <div class="social-row">
+                <a href="https://www.instagram.com/macbruh_ff" class="social-link instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://t.me/macbruh_ff" class="social-link telegram" target="_blank">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://youtube.com/@macbruh_ff" class="social-link youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <div class="social-username">@MACBRUH_FF</div>
+        </div>
+        <div class="copyright">
+            <p>🚀 ＰＯＷＥＲＥＤ ＢＹ ＭＡＣＢＲＵＨ ＦＦ ⚡</p>
+        </div>
+    </div>
+</footer>
+
+<audio id="bg-music" autoplay loop>
+    <source src="BGM_OB50_2NB_Pain_Lobby.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    // Prevent right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+    
+    // Prevent text selection
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+    });
+    
+    // Auto-play music when page loads
+    window.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('bg-music');
+        audio.volume = 0.2; // Set volume to 20%
+        audio.play().catch(e => {
+            // If autoplay fails, try again on user interaction
+            document.addEventListener('click', function() {
+                audio.play().catch(e => console.log('Autoplay prevented:', e));
+            }, { once: true });
+        });
+    });
+</script>
+</body>
+</html>
